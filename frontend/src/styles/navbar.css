@@ -1,0 +1,27 @@
+.navbar { position: fixed; inset: 0 0 auto 0; z-index: 100; height: var(--header-h); border-bottom: 1px solid transparent; transition: background-color 0.25s, border-color 0.25s, backdrop-filter 0.25s; }
+.navbar.is-scrolled, .navbar.is-open { background: rgba(6, 10, 19, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom-color: var(--border); }
+.navbar__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.navbar__brand { text-decoration: none; border-radius: 8px; }
+.navbar__nav { display: flex; align-items: center; gap: 1.75rem; }
+.navbar__links { display: flex; align-items: center; gap: 0.25rem; }
+.navbar__link { position: relative; display: block; padding: 0.5rem 0.8rem; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.navbar__link::after { content: ''; position: absolute; left: 0.8rem; right: 0.8rem; bottom: 0.15rem; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.25s var(--ease); }
+.navbar__link:hover { color: #fff; }
+.navbar__link:hover::after, .navbar__link.is-active::after { transform: scaleX(1); }
+.navbar__link.is-active { color: #fff; }
+.navbar__toggle { display: none; width: 44px; height: 44px; place-items: center; background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius); color: var(--text); }
+
+@media (max-width: 820px) {
+  .navbar__toggle { display: grid; }
+  .navbar__nav {
+    position: fixed; top: var(--header-h); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 1rem;
+    padding: 1rem 1.25rem 1.5rem; background: rgba(6, 10, 19, 0.98); border-bottom: 1px solid var(--border);
+    visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity 0.2s, transform 0.2s var(--ease), visibility 0.2s;
+  }
+  .navbar.is-open .navbar__nav { visibility: visible; opacity: 1; transform: none; }
+  .navbar__links { flex-direction: column; align-items: stretch; }
+  .navbar__link { padding: 0.85rem 0.25rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); }
+  .navbar__link::after { display: none; }
+  .navbar__link.is-active { color: var(--accent-strong); }
+  .navbar__cta { width: 100%; }
+}

@@ -1,0 +1,11 @@
+.contact-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(1.4rem, 4vw, 2.5rem); }
+.contact-aside { display: grid; gap: 1.25rem; position: sticky; top: calc(var(--header-h) + 1.5rem); }
+.whatsapp-card { border-radius: var(--radius-lg); padding: 1.6rem; border: 1px solid rgba(62, 193, 245, 0.4); background: linear-gradient(160deg, rgba(62, 193, 245, 0.12), var(--surface)); display: grid; gap: 0.9rem; justify-items: start; }
+.whatsapp-card h2 { font-size: 1.4rem; font-weight: 600; }
+.whatsapp-card p { color: var(--muted); }
+.aside-card { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.3rem 1.5rem; }
+.aside-card h2 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+.aside-card p { color: var(--muted); font-size: 1rem; overflow-wrap: anywhere; }
+.aside-card a { display: inline-flex; align-items: center; gap: 0.45rem; }
+@media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } .contact-aside { position: static; } }
