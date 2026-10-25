@@ -12,21 +12,6 @@ entropy-soft/
 ## 1. Requirements
 Node.js 18 or newer (`node -v`).
 
-## 2. Configure the email account (required for real delivery)
-The backend sends mail through Gmail SMTP using an **App Password** (never the normal Gmail password).
-
-1. Sign in to the Google account `entropysoft101@gmail.com`.
-2. Turn on **2-Step Verification** (Google Account → Security).
-3. Open https://myaccount.google.com/apppasswords, create an app password (name it "Entropy Soft website") and copy the 16 characters.
-4. In `backend/`, copy the example file and fill in the password:
-   ```bash
-   cd backend
-   cp .env.example .env
-   ```
-   Then edit `.env` and set `EMAIL_APP_PASSWORD=` to the 16-character value.
-
-`.env` is git-ignored. Never put credentials in the frontend.
-Prefer a transactional provider (Resend, Brevo, SendGrid...)? Only `backend/services/emailService.js` needs changing.
 
 ## 3. Run locally
 Open two terminals.
